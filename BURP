@@ -1,12 +1,13 @@
-1. Certs and decryption
+1. Certs and decryption https
 2. Have to check out Hackersploit
 3. Getting started
+4. https
 
 
 
 1.
 https://www.youtube.com/watch?v=AZzGbaGiVeE
-
+Firefox > Hamburger > Privacy & Security > Certificates > View Certificates > Import
 2. 
 https://www.youtube.com/watch?v=YCCrVtvAu2I&list=PLBf0hzazHTGP2L7AoWTIhggUsDdNZhfBl
 
@@ -14,3 +15,5 @@ https://www.youtube.com/watch?v=YCCrVtvAu2I&list=PLBf0hzazHTGP2L7AoWTIhggUsDdNZh
 java -version; Make sure you have compatible version
 java -jar -Xmx4g burpsuite_community.jar
 Firefox > Hamburger > Network > Proxy > 127.0.0.1:8080  for cleartext!
+
+
