@@ -1,1 +1,6 @@
 
+Is three things kind of tied together ish but totally unique.
+  Authentication - Validates who you are
+  Session Management - Cookie validates you are who you say you are. 
+  Access Control - determines whether the user is allowed to carry something out.
+  
