@@ -1,5 +1,6 @@
 1. Certs and decryption
 2. Have to check out Hackersploit
+3. Getting started
 
 
 
@@ -8,3 +9,8 @@ https://www.youtube.com/watch?v=AZzGbaGiVeE
 
 2. 
 https://www.youtube.com/watch?v=YCCrVtvAu2I&list=PLBf0hzazHTGP2L7AoWTIhggUsDdNZhfBl
+
+3. 
+java -version; Make sure you have compatible version
+java -jar -Xmx4g burpsuite_community.jar
+Firefox > Hamburger > Network > Proxy > 127.0.0.1:8080  for cleartext!
