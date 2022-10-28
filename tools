@@ -3,3 +3,4 @@ mitm proxy    -  https://mitmproxy.org/ Looks promising
 Wireshark     -  You have to capture the keys for https good http with defaults. 
 SQLmap        - 
 BurpSuite     - Proxy and much more
+OWASP ZAP     -  Zed Attack Proxy tool
