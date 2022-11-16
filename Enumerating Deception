@@ -1,0 +1,22 @@
+1. What if there is a wildcard DNS entry. We can use host list against domain due to IP result being one IP. 
+2. If wget gave us all unique information. Nothing leading to unique hosts. We might want to look at titles or different data. To find real pages.
+
+
+
+
+1.  for i in $(cat vhosts.list); do wget -0- --no-verbose http://$i.mydomain.local 1> /dev/null 2>>vhosts.real.txt; done
+  now if the subdomain at $i resolves things for all hosts we will need to look for a unque identifer in the file.
+  One tequnique may be to look for a particular field and find where it is unique
+  grep -v might be helpful. 
+  
+2. curl -s http://hostname.mydomain.local| grep "<title>"
+   curl -s http://hostname2.mydomain.local| grep "<title>"
+ Here we have to ensure something is consistent vs unique about the default web page vs a real one. 
+ 
+for i in $(cat vhosts.list); 
+  do title=$(curl -s http://hostname.mydomain.local| grep "<title>"| cut -d\> -f2| cut -d\< -f1);
+  
+if [["$title" != "$i.mydomain.local"]]; 
+  then echo "$i.mydomain.local"; 
+  fi;
+  done;
