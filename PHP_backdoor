@@ -20,3 +20,4 @@ sessions -i 1
 sessions; will show you sessions. Above opens one interactively
 meterpreter>getuid
 meterpreter>sysinfo
+meterpreter>shell;  to open a shell to the machine other commands will be available. 
