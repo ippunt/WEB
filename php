@@ -1,4 +1,5 @@
 1. Our first hello world
+2. Our First form
 
 
 
@@ -23,3 +24,34 @@ echo "Hello, World!" ?></h2>
 </body>
 </html>
 
+
+2. Not much PHP code
+What we did learn is that PHP comments need to be between <?php and ?> or else it is in html and is viewable.
+
+<!DOCTYPE html>
+<html>
+<head><title>LOGIN</title></head>
+<body>
+
+     <form action="login.php" method="post">  
+
+        <h2>LOGIN</h2>
+
+        <?php if (isset($_GET['error'])) { ?>    #PHP Comment
+
+            <p class="error"><?php echo $_GET['error']; ?></p>
+
+        <?php } ?> 
+
+        <label>User Name</label>             
+
+        <input type="text" name="uname" placeholder="User Name"><br>
+
+        <label>Password</label>
+
+        <input type="password" name="password" placeholder="Password"><br> 
+
+        <button type="submit">Login</button>
+
+     </form>
+</body></html>
