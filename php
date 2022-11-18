@@ -2,6 +2,7 @@
 2. Our First form					php commends need to be in code <?php  #Comment ?>
 3. PHP login script to use with form. 
 4. Let's get some refreshed data                        Just use the ; at the end of each line. Save you some grief
+5. Counter
 
 
 1. Dependancies and lessons: 
@@ -141,3 +142,13 @@ Needs work:
 #$page = $_SERVER['PHP_SELF']
 #$sec = "10";
 #header("Refresh: $sec; url=$page");
+
+5.
+$counter = 0;
+while(...)
+{
+    (...)
+    $counter++;
+}
+
+echo $counter;
