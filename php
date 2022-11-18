@@ -135,3 +135,9 @@ echo "<h3> It's ".date("l,  F Y h:i:s A")."<br>\r\n"
 </html>
 
 4b Lets get it refreshing. 
+
+session_start();
+if (!isset($_SESSION['pageRefreshCount']))
+	$_SESSION['pageRefreshCount'] =0;
+	
+$_SESSION['pageRefreshCount'] = $_SESSION['pageRefreshCount'] +1
