@@ -135,9 +135,9 @@ echo "<h3> It's ".date("l,  F Y h:i:s A")."<br>\r\n"
 </html>
 
 4b Lets get it refreshing. 
+header("Refresh: 3;");
 
-session_start();
-if (!isset($_SESSION['pageRefreshCount']))
-	$_SESSION['pageRefreshCount'] =0;
-	
-$_SESSION['pageRefreshCount'] = $_SESSION['pageRefreshCount'] +1
+Needs work:
+#$page = $_SERVER['PHP_SELF']
+#$sec = "10";
+#header("Refresh: $sec; url=$page");
