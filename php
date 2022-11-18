@@ -4,6 +4,7 @@
 4. Let's get some refreshed data                        Just use the ; at the end of each line. Save you some grief
 5. Counter while and for
 6. Utilize a var
+7. Start session and sessions for php
 
 
 1. Dependancies and lessons: 
@@ -207,3 +208,7 @@ for ($x = 0; $x= 20;$x++) {  # What do you think happends? x=20 and just continu
 6. 
 $sec = 3;
 header("Refresh: $sec; url=http://localhost/date.php");
+
+7. 
+session_start() # starts the session
+$_SESSION       # to call the session
