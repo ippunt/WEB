@@ -151,7 +151,7 @@ while(...)# Why doesn't something like this work for a webpage say reloading?
     (...)
     $counter++;
 }
-
+$x=0;
 while($x <= 5) {
   echo "<h3> It's ".date("l,  F Y h:i:s A")."<br>\r\n";
   header("Refresh: $x; url=http://localhost/date.php");
