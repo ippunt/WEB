@@ -58,6 +58,46 @@ What we did learn is that PHP comments need to be between <?php and ?> or else i
 
 
 3.
+login1.html:
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>LOGIN</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+     <form action="login.php" method="post">  
+
+        <h2>LOGIN</h2>
+
+	 <label>User Name</label>             
+
+        <input type="text" name="uname" placeholder="User Name"><br>
+
+        <label>Password</label>
+
+        <input type="password" name="password" placeholder="Password"><br> 
+
+        <button type="submit">Login</button>
+
+     </form>
+
+</body>
+
+</html>
+
+
+
+
+login.php:
 <?php
 // Get Client IP
 if (!empty($_SEVER['HTTP_CLIENT_IP'])) { $ip_address = $_SERVER['HTTP_CLIENT_IP]; }
