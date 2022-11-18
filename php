@@ -116,3 +116,22 @@ file_put_contents("fakeloginlog.txt",$logentry.PHP_EOL, FILE_APPEND | LOCK_EX);
 header('Location: ./index.html');
 exit;
 ?>
+
+
+4a get date working accordingly
+date.php:
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Look Up!</title>
+</head>
+<body>
+<h2>h2
+<?php
+echo "<h3> It's ".date("l,  F Y h:i:s A")."<br>\r\n"
+
+?>
+</body>
+</html>
+
+4b Lets get it refreshing. 
