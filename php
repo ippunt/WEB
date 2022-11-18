@@ -1,7 +1,7 @@
-1. Our first hello world
-2. Our First form
+1. Our first hello world				php must be installed and files need .php even if mostly html
+2. Our First form					php commends need to be in code <?php  #Comment ?>
 3. PHP login script to use with form. 
-4. Let's get some refreshed data
+4. Let's get some refreshed data                        Just use the ; at the end of each line. Save you some grief
 
 
 1. Dependancies and lessons: 
