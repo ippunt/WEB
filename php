@@ -181,16 +181,20 @@ while($x <= 5) {
   $x++;
 }
 
-It's Friday, November 2022 01:31:27 PM
-0
-It's Friday, November 2022 01:31:28 PM
-0
-It's Friday, November 2022 01:31:30 PM
-0
-It's Friday, November 2022 01:31:33 PM
-0
-It's Friday, November 2022 01:31:37 PM
-0
+
+It's Friday, November 2022 01:33:27 PM
+1
+It's Friday, November 2022 01:33:28 PM
+2
+It's Friday, November 2022 01:33:30 PM
+3
+It's Friday, November 2022 01:33:33 PM
+4
+It's Friday, November 2022 01:33:37 PM
+5
+
+
+
 for ($x = 0; $x<= 20;$x++) {
   echo "The number is: $x <br>";
 }
