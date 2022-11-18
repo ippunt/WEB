@@ -2,7 +2,7 @@
 2. Our First form					php commends need to be in code <?php  #Comment ?>
 3. PHP login script to use with form. 
 4. Let's get some refreshed data                        Just use the ; at the end of each line. Save you some grief
-5. Counter
+5. Counter while and for
 6. Utilize a var
 
 
@@ -152,7 +152,12 @@ while(...)
     $counter++;
 }
 
-echo $counter;
+
+for ($x = 0; $x<= 20;$x++) {
+  echo "The number is: $x <br>";
+}
+  
+
 
 6. 
 $sec = 3;
