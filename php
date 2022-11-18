@@ -4,9 +4,11 @@
 
 
 1. Dependancies and lessons: 
+php installed, files with php need .php, 
 You will need php installed to see the Hello, World! code. 
 If you look at the source you will see: <h2>h2 Hello, World!</h2>   as the php is rendered server side it is not visible to client machines. 
 Your client browser will not let you open .php  However, if you select other app and select browser to force it, for me it just kept opening it continuously.
+File needs file extention .php or if its .html it may send it to the client commented out. 
 root@ubuntu:/var/www/html# cat index.php 
 <!DOCTYPE html>
 <html>
