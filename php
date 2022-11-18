@@ -145,12 +145,23 @@ Needs work:
 #header("Refresh: $sec; url=$page");
 
 5.
-$counter = 0;
-while(...)
+$counter = 1;
+while(...)# Why doesn't something like this work for a webpage say reloading?
 {
     (...)
     $counter++;
 }
+
+while($x <= 5) {
+  echo "<h3> It's ".date("l,  F Y h:i:s A")."<br>\r\n";
+  header("Refresh: $x; url=http://localhost/date.php");
+  $x++;
+} # What happends is the data refreshses ever $x seconds and stays at 5 and prints 5 times. 
+It's Friday, November 2022 01:11:37 PM
+It's Friday, November 2022 01:11:37 PM
+It's Friday, November 2022 01:11:37 PM
+It's Friday, November 2022 01:11:37 PM
+It's Friday, November 2022 01:11:37 PM
 
 
 for ($x = 0; $x<= 20;$x++) {
