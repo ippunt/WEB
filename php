@@ -156,13 +156,17 @@ while($x <= 5) {
   echo "<h3> It's ".date("l,  F Y h:i:s A")."<br>\r\n";
   header("Refresh: $x; url=http://localhost/date.php");
   $x++;
-} # What happends is the data refreshses ever $x seconds and stays at 5 and prints 5 times. 
-It's Friday, November 2022 01:11:37 PM
-It's Friday, November 2022 01:11:37 PM
-It's Friday, November 2022 01:11:37 PM
-It's Friday, November 2022 01:11:37 PM
-It's Friday, November 2022 01:11:37 PM
-
+} #  This behavior is not what I expected, prints all at once and then refreshes at 5 seconds. 
+It's Friday, November 2022 01:19:51 PM
+1
+It's Friday, November 2022 01:19:51 PM
+2
+It's Friday, November 2022 01:19:51 PM
+3
+It's Friday, November 2022 01:19:51 PM
+4
+It's Friday, November 2022 01:19:51 PM
+5 
 
 for ($x = 0; $x<= 20;$x++) {
   echo "The number is: $x <br>";
