@@ -169,6 +169,28 @@ It's Friday, November 2022 01:19:51 PM
 It's Friday, November 2022 01:19:51 PM
 5 
 
+
+<?php  # This is closer to what I was thinking
+$x = 1;
+
+while($x <= 5) {
+  echo "<h3> It's ".date("l,  F Y h:i:s A")."<br>\r\n";
+  header("Refresh: $x; url=http://localhost/date.php");
+  echo $x;
+  sleep($x);
+  $x++;
+}
+
+It's Friday, November 2022 01:31:27 PM
+0
+It's Friday, November 2022 01:31:28 PM
+0
+It's Friday, November 2022 01:31:30 PM
+0
+It's Friday, November 2022 01:31:33 PM
+0
+It's Friday, November 2022 01:31:37 PM
+0
 for ($x = 0; $x<= 20;$x++) {
   echo "The number is: $x <br>";
 }
