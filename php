@@ -157,6 +157,7 @@ while($x <= 5) {
   header("Refresh: $x; url=http://localhost/date.php");
   $x++;
 } #  This behavior is not what I expected, prints all at once and then refreshes at 5 seconds. 
+  #  So, it iterates at 1 prints for it and iterates 2 and prints but does not timeout for refresh duhhh!
 It's Friday, November 2022 01:19:51 PM
 1
 It's Friday, November 2022 01:19:51 PM
