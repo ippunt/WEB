@@ -3,6 +3,7 @@
 3. PHP login script to use with form. 
 4. Let's get some refreshed data                        Just use the ; at the end of each line. Save you some grief
 5. Counter
+6. Utilize a var
 
 
 1. Dependancies and lessons: 
@@ -152,3 +153,7 @@ while(...)
 }
 
 echo $counter;
+
+6. 
+$sec = 3;
+header("Refresh: $sec; url=http://localhost/date.php");
