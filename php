@@ -172,7 +172,10 @@ It's Friday, November 2022 01:19:51 PM
 for ($x = 0; $x<= 20;$x++) {
   echo "The number is: $x <br>";
 }
-  
+for ($x = 0; $x= 20;$x++) {  # What do you think happends? x=20 and just continues and iterates. 
+  echo "The number is: $x <br>";
+}
+    
 
 
 6. 
