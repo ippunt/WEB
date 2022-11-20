@@ -229,7 +229,7 @@ a parse error will result at the last line.
 <?php ob_start();session_start(); ?>
 <html>
 <head>
-<title>How hackable is this?</title>
+<title>Hardcoded Uname Pass</title>
 </head>
 <body>
 <h1>Login</h1>
@@ -237,7 +237,7 @@ a parse error will result at the last line.
 	 $msg = '';
 	 if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password']))
 {
-		if ($_POST['username'] == 'sec550' && $_POST['password'] == 'sec550') {
+		if ($_POST['username'] == 'myname' && $_POST['password'] == 'mypass') {
 		 echo 'You have entered a valid username and password';
 } else {
 	$msg = 'Wrong username or password';
