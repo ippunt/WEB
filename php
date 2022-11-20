@@ -5,6 +5,8 @@
 5. Counter while and for
 6. Utilize a var
 7. Start session and sessions for php
+8. about the ";" spaces and tabs
+9. Form with hard coded username and password
 
 
 1. Dependancies and lessons: 
@@ -212,3 +214,42 @@ header("Refresh: $sec; url=http://localhost/date.php");
 7. 
 session_start() # starts the session
 $_SESSION       # to call the session
+
+8.
+It is very important to note that the line with the closing identifier must contain no other characters, except a semicolon (;). 
+That means especially that the identifier may not be indented, and there may not be any spaces or tabs before or after the semicolon. 
+It's also important to realize that the first character before the closing identifier must be a newline as defined by the local operating system. 
+This is \n on UNIX systems, including Mac OS X. The closing delimiter must also be followed by a newline.
+
+If this rule is broken and the closing identifier is not "clean", it will not be considered a closing identifier, 
+and PHP will continue looking for one. If a proper closing identifier is not found before the end of the current file,
+a parse error will result at the last line.
+
+9.
+<?php ob_start();session_start(); ?>
+<html>
+<head>
+<title>How hackable is this?</title>
+</head>
+<body>
+<h1>Login</h1>
+	<?php
+	 $msg = '';
+	 if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password']))
+{
+		if ($_POST['username'] == 'sec550' && $_POST['password'] == 'sec550') {
+		 echo 'You have entered a valid username and password';
+} else {
+	$msg = 'Wrong username or password';
+	http_response_code(403);
+}
+	 }
+?>
+		<form action= <?php echo htmlspecialchars($_SERVER['PHP_SELF'])?> method = "post">
+			<h4><?php echo $msg; ?></h4>
+			<input type = "text" name="username" placeholder="Username"></br>
+			<input type = "password" name="password" placeholder="Password"></br>
+			<input type = "submit" name="login" placeholder="Login"></br>
+			</form>
+</body>
+</html>
