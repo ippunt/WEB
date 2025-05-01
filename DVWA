@@ -1,0 +1,5 @@
+Just documenting things I have learned. 
+
+The first thing I want to go after is the scan reporting the cookie does not have HttpOnly Flag or the SameSite attribute.
+HttpOnly cookie can be accessed via javascript. Run Java script on the page to push coookie elsewhere. Need apache running on cali to capture.
+SameSite Cookie can be sent as a result of a 'Cross-site' request. CSRF. 
